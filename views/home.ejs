@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Home</title>
+</head>
+<body>
+  <h1>Blog Articles</h1>
+  
+  <a href="/articles/edit" class="new-article">New Article</a>
+  <div class="article-box">
+    <%for(let i=0;i<articles.length;i++){%>
+    <div class="article">
+      <h2 class="title"><%=articles[i].title%></h2>
+      <small id="date" class="dates"><%=articles[i].time%></small>
+      <p class="body"><%=articles[i].body%></p>
+      <div class="options">
+        <ul>
+          <li class="read">Read More</li>
+          <a href="/articles/edit/<%=articles[i]._id%>"><li class="edit">Edit</li></a>
+          <a href="/articles/<%=articles[i]._id%>"><li class="delete">Delete</li></a>
+        </ul>
+      </div>
+    </div>
+    <%}%>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js" integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
